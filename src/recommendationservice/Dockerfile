@@ -27,7 +27,7 @@ RUN GRPC_HEALTH_PROBE_VERSION=v0.3.6 && \
 # get packages
 WORKDIR /recommendationservice
 COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # add files into working directory
 COPY . .
@@ -36,4 +36,4 @@ COPY . .
 ENV PORT "8080"
 EXPOSE 8080
 
-ENTRYPOINT ["python", "/recommendationservice/recommendation_server.py"]
+ENTRYPOINT ["python3", "/recommendationservice/recommendation_server.py"]
